@@ -6,34 +6,50 @@
     <title>CineTrack</title>
 </head>
 <body>
-    <!-- Titulo -->
-    <h1>CineTrack</h1>
-    <p> O <strong> CineTrack </strong> é nossa aplicação para disciplina de Programação de Sistemas WEB. </p>
+    <header> 
+        <h1>CineTrack</h1>
+        <input type="search" aria-label="Buscar filme">
+        <a href="adicionar.html"><button>+ Adicionar</button></a>
+    </header>
 
-    <!-- Lista de Status Possíveis -->
-    <h2>Status Possível</h2>
-    <ul id="lista-status">
-        <li class="item-status"> Assistido </li>
-        <li class="item-status"> Assistindo </li>
-        <li class="item-status"> Quero assistir </li>
-    </ul>
+    <nav aria-label="Filtros de status">
+        <button class="ativo">Todos</button>
+        <button>Assistido</button>
+        <button>Assistindo</button>
+        <button>Quero assistir</button>
+    </nav>
 
-    <!-- Lista de Filmes Favoritos -->
-    <h2>Meus Filmes Favoritos</h2>
-    <ol>
-        <li>Batman: O Cavaleiro das Trevas</li>
-        <li>Carros</li>
-        <li>Tropa de Elite</li>
-    </ol>
+    <main>
+        <section id="lista" aria-live="polite">
+            <article class="card">
+                <img src="https://image.tmdb.org/t/p/w600_and_h900_face/A7nssMRIPauZhEVf2dzwsf4EALO.jpg" 
+                    alt="Poster de Carros">
+                    <h2>Carros</h2>
+                    <p>2010 | Animação</p>
+                    <p>Nota: ★★★★★</p>
+                    <span>Assistido </span><button>Editar</button><button>Remover</button>
+            </article>
+            <article class="card">
+                <img src="https://image.tmdb.org/t/p/w600_and_h900_face/A7nssMRIPauZhEVf2dzwsf4EALO.jpg" 
+                    alt="Poster de Batman: O Cavaleiro das Trevas">
+                    <h2>Batman: O Cavaleiro das Trevas</h2>
+                    <p>2008 | Ação</p>
+                    <p>Nota: ★★★★★</p>
+                    <span>Assistido </span><button>Editar</button><button>Remover</button>
+            </article>
+            <article class="card">
+                <img src="https://image.tmdb.org/t/p/w600_and_h900_face/A7nssMRIPauZhEVf2dzwsf4EALO.jpg" 
+                    alt="Poster de Joker">
+                    <h2>Joker</h2>
+                    <p>2019 | Suspense Psicológico</p>
+                    <p>Nota: ★★★★★</p>
+                    <span>Assistido </span><button>Editar</button><button>Remover</button>
+            </article>
+        </section>
+    </main>
 
-    <!-- Sobre meu Filme Favorito -->
-    <h2>Sobre</h2>
-    <dl>
-        <dt>Diretor</dt> <dd>Christopher Nolan</dd>
-        <dt>Ano</dt> <dd>18 de julho de 2008 (Brasil)</dd>
-        <dt>Gênero</dt> <dd>Ação; Filme de Super Herói; Crime</dd>
-    </dl>
-
-    <p>Direitos &copy; 2025 CineTrack</p>
+    <footer>
+        <small>CineTrack - UEM | Direitos &copy; 2026</small>
+    </footer>
 </body>
 </html>
