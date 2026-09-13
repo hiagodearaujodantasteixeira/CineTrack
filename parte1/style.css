@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+/* [MODIFICAÇÃO] Variáveis declaradas no :root para centralizar o tema (cores, espaçamento e raios), facilitando a manutenção e a transição para o dark mode. */
+:root {
+    --cor-primaria: #2b0147;
+    --cor-fundo: #31064e;
+    --cor-texto: #FFFFFF;
+    --cor-texto-secundario: #8F9CAE;
+    --raio: 8px;
+    --espaco: 16px;
+}
+
+
+/* [MODIFICAÇÃO] Aplicação do Reset CSS fundamental para que as larguras (width) respeitem bordas e paddings (border-box) sem estourar o layout. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* [MODIFICAÇÃO] Removida a tentativa incorreta de usar grid no body. Aplicadas apenas as regras base de tipografia e as variáveis de cor para o fundo e texto. */
+body {
+    font-family: 'Raleway';
+    line-height: 1.5;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* [MODIFICAÇÃO] Reset padrão para imagens, garantindo que nunca ultrapassem o limite de suas caixas. */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* [MODIFICAÇÃO] Reset de botão herdando a fonte do corpo, aliado à propriedade transition para que o efeito de hover ocorra de forma suave em 200ms. */
+button {
+    font: inherit;
+    cursor: pointer;
+    transition: background 200ms ease, transform 150ms;
+}
+
+/* [MODIFICAÇÃO] Pseudo-classes adicionadas para responder visualmente quando o botão é focado pelo mouse (:hover) ou pelo teclado (:focus-visible). */
+button:hover {
+    background: var(--cor-primaria);
+    color: white;
+    transform: translateY(-2px);
+}
+button:focus-visible {
+    outline: 3px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* [MODIFICAÇÃO] Tipografia fluida adicionada. O h1 calculará dinamicamente seu tamanho entre 1.2rem (mínimo) e 2.5rem (máximo). */
+h1 {
+    font-size: clamp(1.2rem, 1rem + 2.5vw, 2.5rem);
+}
+
+/* [MODIFICAÇÃO] Header alinhado utilizando Flexbox. A distribuição dos elementos adota justify-content: space-between e o espaçamento usa a variável --espaco. */
+header {
+    background-color: var(--cor-primaria);
+    padding: 12px 24px;
+    color: var(--cor-texto);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espaco);
+    flex-wrap: wrap;
+    border-radius: var(--raio);
+}
+
+header h1 {
+    flex: 0 0 auto;
+}
+
+header input {
+    flex: 1 1 240px;
+}
+
+header button {
+    padding: 6px 14px;
+    border: 1px solid var(--cor-texto-secundario);
+    background: var(--cor-texto);
+    border-radius: 999px;
+    color: var(--cor-primaria);
+}
+
+/* [MODIFICAÇÃO] Navegação estruturada em flex com espaçamentos corrigidos. */
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 12px 24px;
+}
+
+/* [MODIFICAÇÃO] Botões de filtro padronizados em formato de "pílula" com border-radius exagerado (999px). */
+nav button {
+    padding: 6px 14px;
+    border: 1px solid var(--cor-texto-secundario);
+    background: var(--cor-texto);
+    border-radius: 999px;
+    color: var(--cor-primaria);
+}
+
+nav button.ativo {
+    background: var(--cor-primaria);
+    color: white;
+}
+
+/* [MODIFICAÇÃO] A listagem trocou Flexbox por Grid. A função minmax() aliada ao auto-fill ajusta as colunas sozinhas conforme a tela aumenta ou diminui. */
+#lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: var(--espaco);
+    padding: 24px;
+}
+
+/* [MODIFICAÇÃO] O card passou a utilizar flex-direction: column para organizar seus itens em formato de pilha (topo para base). As variáveis padronizam raio e bordas. */
+.card {
+    background: white;
+    color: var(--cor-primaria);
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: var(--raio);
+    box-shadow: 0 1px 4px #0002;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* [MODIFICAÇÃO] A margem automática empurra exclusivamente os botões para o final do card, desde que agrupados em uma <div class="acoes"> no arquivo HTML. */
+.card .acoes {
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+}
+
+/* [MODIFICAÇÃO] Imagens de pôsteres estritamente proporcionais, com object-fit realizando um corte inteligente em formatos fora do padrão 2:3. */
+.card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+}
