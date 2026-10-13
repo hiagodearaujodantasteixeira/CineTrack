@@ -202,3 +202,32 @@ nav button.ativo {
     background: var(--cor-primaria);
     color: #fff;
 }
+
+@media print {
+    :root {
+        --cor-primaria: #000;
+        --cor-fundo: #fff;
+        --cor-texto: #000;
+        --cor-texto-secundario: #000;
+        color-scheme: light;
+    }
+
+    header input[type="search"],
+    header > a,
+    nav,
+    .card .acoes,
+    footer {
+        display: none;
+    }
+
+    body,
+    header {
+        background: #fff;
+        color: #000;
+    }
+
+    .card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+}
