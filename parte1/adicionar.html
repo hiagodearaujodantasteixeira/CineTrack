@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Adicionar filme - CineTrack</title>
 </head>
 <body>
@@ -10,30 +11,44 @@
     <h1>Adicionar Filme</h1>
 
     <form id ="form-filme"> 
-        <label for="titulo">Título</label>
-        <input id="titulo" name="titulo" type="text" required>
+        <div class="campo">
+            <label for="titulo">Título</label>
+            <input id="titulo" name="titulo" type="text" required>
+        </div>
 
-        <label for="ano">Ano</label>
-        <input id="ano" name="ano" type="number" min="1888" max="2030" required>
+        <div class="campo">
+            <label for="ano">Ano</label>
+            <input id="ano" name="ano" type="number" min="1888" max="2030" required>
+        </div>
 
-        <label for="genero">Gênero</label>
-        <input id="genero" name="genero" type="text" required>
+        <div class="campo">
+            <label for="genero">Gênero</label>
+            <input id="genero" name="genero" type="text" required>
+        </div>
 
-        <label for="url">URL do Pôster</label>
-        <input id="url" name="url" type="text">
+        <div class="campo">
+            <label for="url">URL do Pôster</label>
+            <input id="url" name="url" type="text">
+        </div>
 
-        <label for="status">Status:</label>
-        <select id="status" name="status" required>
-            <option value="ativo">Assistido</option>
-            <option value="pendente">Assistindo</option>
-            <option value="inativo">Quero assistir</option>
-        </select>
+        <div class="campo">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="ativo">Assistido</option>
+                <option value="pendente">Assistindo</option>
+                <option value="inativo">Quero assistir</option>
+            </select>
+        </div>
 
-        <label for="nota">Nota</label>
-        <input id="nota" name="nota" type="number" min="1" max="5">
+        <div class="campo">
+            <label for="nota">Nota</label>
+            <input id="nota" name="nota" type="number" min="1" max="5">
+        </div>
 
-        <label for="comentario">Comentário</label>
-        <textarea id="comentario" name="comentario"></textarea>
+        <div class="campo">
+            <label for="comentario">Comentário</label>
+            <textarea id="comentario" name="comentario"></textarea>
+        </div>
 
         <button type="button">Cancelar</button>
         <button type="submit">Salvar</button>
